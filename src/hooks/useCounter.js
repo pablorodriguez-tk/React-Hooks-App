@@ -1,19 +1,19 @@
 import { useState } from "react";
 
 const useCounter = (initialState = 10) => {
-  const [state, setState] = useState(initialState);
+  const [counter, setCounter] = useState(initialState);
 
-  const increment = (factor = 1) => {
-    setState(state + factor);
+  const increment = () => {
+    setCounter(counter + 1);
   };
 
-  const decrement = (factor = 1) => {
-    setState(state - factor);
+  const decrement = () => {
+    setCounter(counter - 1);
   };
 
-  const reset = () => setState(initialState);
+  const reset = () => setCounter(initialState);
 
-  return { state, increment, decrement, reset };
+  return { counter, increment, decrement, reset };
 };
 
 export default useCounter;
