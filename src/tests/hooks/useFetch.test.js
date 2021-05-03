@@ -27,7 +27,7 @@ describe("Pruebas en useFetch", () => {
     const { result, waitForNextUpdate } = renderHook(() =>
       useFetch(`https://reqres.in/apid/users?page=2`)
     );
-    await waitForNextUpdate({ timeout: 2000 });
+    await waitForNextUpdate({ timeout: 3000 });
     const { data, loading, error } = result.current;
     expect(data).toBe(null);
     expect(loading).toBe(false);
